@@ -18,18 +18,26 @@
   <body onload="init_js()">
     <div class="vh-100 d-flex justify-content-center align-items-center">
       <div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-6 text-center">
+            <label>
+              <input type="file" name="input-name" style="display: none;" onchange="read_sudoku(this.files[0])"/>
+              <span type="button" class="btn btn-warning">NEW<BR>FROM FILE</span>
+            </label>
+          </div>
+          <div class="col-6 text-center">
+            <button type="button" class="btn btn-warning">NEW<BR>GENERATED</button>
+          </div>
+        </div>
         <table id="sudoku_table">
           <tbody></tbody>
         </table>
         <div class="row justify-content-center align-items-center">
-          <div class="col-4 text-center">
-            <button type="button" class="btn btn-warning">New</button>
+          <div class="col-6 text-center">
+            <button type="button" class="btn btn-danger" onclick="reset_sudoku()">CLEAR</button>
           </div>
-          <div class="col-4 text-center">
-            <button type="button" class="btn btn-danger">Clear</button>
-          </div>
-          <div class="col-4 text-center">
-            <button type="button" class="btn btn-success">Validate</button>
+          <div class="col-6 text-center">
+            <button type="button" class="btn btn-info" onclick="solve_sudoku()">SOLVE</button>
           </div>
         </div>
       </div>
